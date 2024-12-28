@@ -20,7 +20,7 @@ function ChatApp() {
 
   async function fetchMessages() {
     try {
-      const response = await axios.get('http://localhost:8000/api/messages/');
+      const response = await axios.get('https://primarily-ace-buffalo.ngrok-free.app/api/messages/');
       setMessages(response.data);
     } catch (error) {
       console.error(error);
@@ -33,7 +33,7 @@ function ChatApp() {
     setNewMessage('');
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/messages/',
+        'https://primarily-ace-buffalo.ngrok-free.app/api/messages/',
         { text: newMessage },
         { headers: { 'Content-Type': 'application/json' } }
       );
